@@ -5,13 +5,13 @@ const Modal = (props) => {
     const [isVisible, setIsVisible] = useState(props.isVisible)
 
     const okButtonHandler = () => {
-        setIsVisible("false")
+        setIsVisible(false)
     }
     const cancelButtonHandler = () => {
-        setIsVisible("false")
+        setIsVisible(false)
     }
 
-    if (isVisible == "false") {
+    if (isVisible == false) {
         return <div></div>
     }
 

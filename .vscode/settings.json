@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/7053ba0b-0cb7-4f7d-99f1-9d6ee899523e/resourceGroups/appsvc_linux_centralus/providers/Microsoft.Web/sites/next-tailwind-sample",
+    "appService.deploySubpath": "."
+}

@@ -1,3 +1,5 @@
+import AlertCard from '../components/alert-card'
+import Card from '../components/card'
 import Head from 'next/head'
 
 export default function Home() {
@@ -9,12 +11,19 @@ export default function Home() {
       </Head>
 
       <main className="flex flex-col items-center justify-center w-full flex-1 px-20 text-center">
+
+        <AlertCard title="Alert" body="Hurricane warning"></AlertCard>
+
+
         <h1 className="text-6xl font-bold">
           Welcome to{' '}
-          <a className="text-red-600" href="https://nextjs.org">
-            Next.js!
+          <a className="text-purple-600" href="https://nextjs.org">
+            This is Next.js!
           </a>
         </h1>
+        <Card>
+          <p>HELLO <b>WORLD</b></p>
+        </Card>
 
         <p className="mt-3 text-2xl">
           Get started by editing{' '}

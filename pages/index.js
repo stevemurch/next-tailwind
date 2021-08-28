@@ -1,8 +1,15 @@
 import AlertCard from '../components/alert-card'
+import ButtonRegular from '../components/button-regular'
 import Card from '../components/card'
 import Head from 'next/head'
 
 export default function Home() {
+
+  const buttonClickHandler = () => {
+    console.log("HELLO")
+  }
+
+
   return (
     <div className="flex flex-col items-center justify-center min-h-screen py-2">
       <Head>
@@ -13,6 +20,8 @@ export default function Home() {
       <main className="flex flex-col items-center justify-center w-full flex-1 px-20 text-center">
 
         <AlertCard title="Alert" body="Hurricane warning"></AlertCard>
+
+        <ButtonRegular onClick={buttonClickHandler} />
 
 
         <h1 className="text-6xl font-bold">

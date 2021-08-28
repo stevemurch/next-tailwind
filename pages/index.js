@@ -2,6 +2,7 @@ import AlertCard from '../components/alert-card'
 import ButtonRegular from '../components/button-regular'
 import Card from '../components/card'
 import Head from 'next/head'
+import Modal from '../components/modal'
 
 export default function Home() {
 
@@ -16,6 +17,8 @@ export default function Home() {
         <title>Create Next App</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
+
+      <Modal isVisible="true" />
 
       <main className="flex flex-col items-center justify-center w-full flex-1 px-20 text-center">
 

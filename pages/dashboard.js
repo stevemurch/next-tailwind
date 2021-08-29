@@ -1,7 +1,12 @@
+import Navbar from "../components/navbar";
+
 const Dashboard = () => {
     return (
         <div>
-            DASHBOARD PAGE
+            <Navbar />
+            <div>
+                DASHBOARD PAGE
+            </div>
         </div>
     );
 }

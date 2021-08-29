@@ -1,19 +1,24 @@
 import { useState } from "react";
 
+/*
+onClose
+title
+body 
+*/
+
 const Modal = (props) => {
 
-    const [isVisible, setIsVisible] = useState(props.isVisible)
-
     const okButtonHandler = () => {
-        setIsVisible(false)
+        props.onClose({ message: "OK clicked!" })
     }
     const cancelButtonHandler = () => {
-        setIsVisible(false)
+        props.onClose({ message: "Canceled!" })
     }
 
-    if (isVisible == false) {
-        return <div></div>
+    if (!props.show) {
+        return null
     }
+
 
     return (
         <div className="fixed z-10 inset-0 overflow-y-auto" aria-labelledby="modal-title" role="dialog" aria-modal="true" >

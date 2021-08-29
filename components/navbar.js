@@ -4,10 +4,15 @@ import { useState } from 'react'
 const Navbar = () => {
 
     const [active, setActive] = useState(false);
+    const [profileMenuActive, setProfileMenuActive] = useState(false);
 
     const handleClick = () => {
         setActive(!active);
     };
+
+    const avatarClickHandler = () => {
+        setProfileMenuActive(!profileMenuActive)
+    }
 
     return (
         <nav className="bg-gray-800">
@@ -38,7 +43,6 @@ const Navbar = () => {
                                 <Link href="/dashboard">
                                     <a className="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium" aria-current="page">Dashboard</a>
                                 </Link>
-
                                 <Link href="/">
                                     <a className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Team</a>
                                 </Link>
@@ -61,17 +65,24 @@ const Navbar = () => {
 
                         <div className="ml-3 relative">
                             <div>
-                                <button type="button" className="bg-gray-800 flex text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white" id="user-menu-button" aria-expanded="false" aria-haspopup="true">
+                                <button onClick={avatarClickHandler} type="button" className="bg-gray-800 flex text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white" id="user-menu-button" aria-expanded="false" aria-haspopup="true">
                                     <span className="sr-only">Open user menu</span>
                                     <img className="h-8 w-8 rounded-full" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="" />
                                 </button>
                             </div>
 
 
-                            <div className="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button" tabIndex="-1">
-                                <a href="#" className="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabIndex="-1" id="user-menu-item-0">Your Profile</a>
-                                <a href="#" className="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabIndex="-1" id="user-menu-item-1">Settings</a>
-                                <a href="#" className="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabIndex="-1" id="user-menu-item-2">Sign out</a>
+                            <div
+                                className={`${profileMenuActive ? 'origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none' : 'hidden'
+                                    } 
+                        `}
+
+                                role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button" tabIndex="-1">
+                                <Link href="/profile">
+                                    <a className="hover:bg-gray-100 block px-4 py-2 text-sm text-gray-700" role="menuitem" tabIndex="-1" id="user-menu-item-0">Your Profile</a>
+                                </Link>
+                                <a href="#" className="hover:bg-gray-100 block px-4 py-2 text-sm text-gray-700" role="menuitem" tabIndex="-1" id="user-menu-item-1">Settings</a>
+                                <a href="#" className="hover:bg-gray-100 block px-4 py-2 text-sm text-gray-700" role="menuitem" tabIndex="-1" id="user-menu-item-2">Sign out</a>
                             </div>
                         </div>
                     </div>
